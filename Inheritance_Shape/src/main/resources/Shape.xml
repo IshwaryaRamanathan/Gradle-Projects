@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean 
+    
+    	id="Shape" class="com.training.test.Shape" abstract="true"/>
+    	
+    	<bean
+    
+    		id="Rectangle" class="com.training.test.Rectangle" parent="Shape">
+    		<constructor-arg type="float" value="20"/>  
+    		<constructor-arg type="float" value="30"/>
+    	
+    	</bean>
+    
+    	<bean
+    
+    		id="Square" class="com.training.test.Square" parent="Shape">
+    		<constructor-arg type="float" value="20"/>  
+    		<constructor-arg type="float" value="20"/>
+    
+    	</bean>
+    	
+    	<bean
+    
+    		id="Triangle" class="com.training.test.Triangle" parent="Shape">
+    		<constructor-arg type="float" value="20"/>  
+    		<constructor-arg type="float" value="20"/>
+    
+    	</bean>
+    	
+    	<bean
+    
+    		id="Circle" class="com.training.test.Circle" parent="Shape">
+    		<constructor-arg type="float" value="20"/>  
+    		<constructor-arg type="float" value="20"/>
+    
+    	</bean>
+    
+	</beans>

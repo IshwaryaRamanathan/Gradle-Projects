@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.springframework.org/schema/beans">
+
+
+<bean 
+	
+	class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="ds">
+	<property value="org.postgresql.Driver" name="driverClassName"/>
+	<property value="jdbc:postgresql://localhost:5432/test" name="url"/>
+	<property value="postgres" name="username"/>
+	<property value="IshK@123" name="password"/>
+
+</bean>
+
+
+<bean 
+	
+	class="org.springframework.jdbc.core.JdbcTemplate" id="jdbcTemplate">
+	<property name="dataSource" ref="ds"/>
+
+</bean>
+
+
+<bean
+	
+	class="com.example.test.ProductDAO" id="pdao">
+	<property name="jdbcTemplate" ref="jdbcTemplate"/>
+
+</bean>
+
+
+<bean
+	
+	class="com.example.test.Product" id="Product">
+	<property value="3" name="pid"/>
+	<property value="Detergent" name="pname"/>
+	<property value="Washing" name="pdesc"/>
+	<property value="12-03-2022" name="domf"/>
+	<property value="12-02-2023" name="doexp"/>
+	<property value="Ariel" name="supplier"/>
+	<property value="5" name="qty"/>
+
+</bean>
+
+</beans>
